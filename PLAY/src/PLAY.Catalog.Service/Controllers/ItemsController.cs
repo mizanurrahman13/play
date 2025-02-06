@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PLAY.Catalog.Service.Entities;
-using PLAY.Catalog.Service.Repositories;
-using System.Xml.Linq;
-using static PLAY.Catalog.Service.Dtos;
+using PLAY.Common;
 
 namespace PLAY.Catalog.Service.Controllers;
 
@@ -11,7 +8,12 @@ namespace PLAY.Catalog.Service.Controllers;
 [ApiController]
 public class ItemsController : ControllerBase
 {
-    private readonly ItemsRepository _itemsRepository;
+    private readonly IRepository<Item> _itemsRepository;
+
+    public ItemsController(IRepository<Item> itemsRepository)
+    {
+        _itemsRepository = itemsRepository;
+    }
 
     [HttpGet]
     public async Task<IEnumerable<ItemDto>> GetAsync()

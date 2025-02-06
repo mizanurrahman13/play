@@ -1,0 +1,7 @@
+Pull MongoDbDocker Image: docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+
+Up or Active Docker Images: docker ps
+
+Create NuGet Package: dotnet pack -o ../../../packages
+
+Add Package Source: dotnet nuget add source C:\Projects\play\packages -n PlayEconomy
