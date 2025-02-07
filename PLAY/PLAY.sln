@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLAY.Catalog.Service", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLAY.Common", "src\PLAY.Common\PLAY.Common.csproj", "{E465169A-07C8-4127-B948-23679A5AF981}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PLAY.Infra", "PLAY.Infra", "{0EEA6BCE-EC86-436C-8059-92662CAB3251}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLAY.Inventory.Service", "src\PLAY.Inventory.Service\PLAY.Inventory.Service.csproj", "{427AA90E-08AB-4D51-ABDF-141136EC1E0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +30,10 @@ Global
 		{E465169A-07C8-4127-B948-23679A5AF981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E465169A-07C8-4127-B948-23679A5AF981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E465169A-07C8-4127-B948-23679A5AF981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427AA90E-08AB-4D51-ABDF-141136EC1E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427AA90E-08AB-4D51-ABDF-141136EC1E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427AA90E-08AB-4D51-ABDF-141136EC1E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427AA90E-08AB-4D51-ABDF-141136EC1E0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +41,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{610852D1-2A6C-4DE2-91EE-4A19BD85AA4E} = {E61EE88E-43AB-4D8C-AF40-CF4FF2A2A206}
 		{E465169A-07C8-4127-B948-23679A5AF981} = {E61EE88E-43AB-4D8C-AF40-CF4FF2A2A206}
+		{427AA90E-08AB-4D51-ABDF-141136EC1E0D} = {E61EE88E-43AB-4D8C-AF40-CF4FF2A2A206}
 	EndGlobalSection
 EndGlobal
