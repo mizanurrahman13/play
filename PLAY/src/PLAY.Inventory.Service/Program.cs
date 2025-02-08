@@ -1,17 +1,34 @@
 using PLAY.Common.MongoDb;
 using PLAY.Inventory.Service.Clients;
 using PLAY.Inventory.Service.Entities;
+using Polly;
+using Polly.Timeout;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMongo()
     .AddMongoRepository<InventoryItem>("inventoryItems");
 
+var jitterer = new Random();
+
 builder.Services.AddHttpClient<CatalogClient>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7148/api");
-});
-
+})
+.AddTransientHttpErrorPolicy(policyBuilder => policyBuilder
+    .Or<TimeoutRejectedException>()
+    .WaitAndRetryAsync(
+        retryCount: 5,
+        sleepDurationProvider: retryAttempt =>
+            TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)) +
+            TimeSpan.FromMilliseconds(jitterer.Next(0, 1000)), // Adding jitter
+        onRetry: (outcome, timespan, retryAttempt, context) =>
+        {
+            var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<CatalogClient>>();
+            logger.LogWarning($"Delaying for {timespan.TotalSeconds} seconds, then making retry {retryAttempt}");
+        }
+    ))
+.AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(1)));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
