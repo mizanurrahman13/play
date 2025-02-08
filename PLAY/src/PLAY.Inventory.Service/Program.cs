@@ -28,7 +28,24 @@ builder.Services.AddHttpClient<CatalogClient>(client =>
             logger.LogWarning($"Delaying for {timespan.TotalSeconds} seconds, then making retry {retryAttempt}");
         }
     ))
+.AddTransientHttpErrorPolicy(policyBuilder => policyBuilder
+    .Or<TimeoutRejectedException>()
+    .CircuitBreakerAsync(
+        handledEventsAllowedBeforeBreaking: 3,
+        durationOfBreak: TimeSpan.FromSeconds(15),
+        onBreak: (outcome, timespan) =>
+        {
+            var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<CatalogClient>>();
+            logger.LogWarning($"Opening the circuit for {timespan.TotalSeconds} seconds...");
+        },
+        onReset: () =>
+        {
+            var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<CatalogClient>>();
+            logger.LogWarning($"Closing the circuit...");
+        })
+)
 .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(1)));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
