@@ -1,4 +1,4 @@
-# Microservices(PLAY) API with .NET 8, Repository, Docker, Polly, Asynchronous inter-service communication(RabbitMQ), Publishing messages(MassTransit) and MongoDb.
+# Microservices(PLAY) API with .NET 8, Asynchronous inter-service communication(RabbitMQ), Publishing messages(MassTransit), Docker, Polly Repository, and MongoDb.
 
 The Project covers database storage with MongoDB, implementing repository patterns, using Docker for containerization, and configuring dependency injection. It also addresses microservice preparation, synchronous and asynchronous inter-service communication, leveraging tools like Postman, IHttpClientFactory, Polly, MassTransit, and RabbitMQ, with a focus on code reuse and Docker Compose.
 
@@ -43,19 +43,19 @@ A microservice architecture utilizing RabbitMQ and MassTransit allows for effici
 - **Built with .NET 8**: Utilizes the latest features for efficient development.
 - **RabbitMQ**: RabbitMQ facilitates reliable, scalable, and efficient communication between distributed systems through message queuing, ensuring robust asynchronous processing and integration.
 - **MassTransit**: MassTransit simplifies the development and management of messaging patterns in .NET applications, enhancing scalability, reliability, and maintainability through seamless integration with message brokers like RabbitMQ.
-- **Repository** : Provides abstraction and simplifies data access logic.
-- **MongoDb**: MongoDB offers high scalability, flexibility, and performance for handling large volumes of data, making it ideal for modern, dynamic applications.
 - **Polly**: Polly enhances the resilience and reliability of applications by providing sophisticated error-handling and resilience policies such as retries, circuit breakers, and timeouts.
 - **Docker**: Docker provides a lightweight and consistent environment for application development and deployment, enabling portability, scalability, and efficient resource utilization across different platforms.
+- **Repository** : Provides abstraction and simplifies data access logic.
+- **MongoDb**: MongoDB offers high scalability, flexibility, and performance for handling large volumes of data, making it ideal for modern, dynamic applications.
 
 ## Technologies Used
 
 - **.NET 8**
-- **Repository Pattern**
 - **RabbitMQ**
 - **MassTransit**
 - **Polly**
 - **Docker**
+- **Repository Pattern**
 - **MongoDb**
 
 ## Contributing
