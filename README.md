@@ -1,4 +1,4 @@
-# Microservice(PLAY) API with .NET 8, Repository, Docker, Polly, Asynchronous inter-service communication(RabbitMQ), Publishing messages(MassTransit) and MongoDb.
+# Microservices(PLAY) API with .NET 8, Repository, Docker, Polly, Asynchronous inter-service communication(RabbitMQ), Publishing messages(MassTransit) and MongoDb.
 
 The Project covers database storage with MongoDB, implementing repository patterns, using Docker for containerization, and configuring dependency injection. It also addresses microservice preparation, synchronous and asynchronous inter-service communication, leveraging tools like Postman, IHttpClientFactory, Polly, MassTransit, and RabbitMQ, with a focus on code reuse and Docker Compose.
 
