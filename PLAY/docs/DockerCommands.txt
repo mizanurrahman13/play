@@ -6,6 +6,8 @@ Create NuGet Package: dotnet pack -o ../../../packages
 
 Add Package Source: dotnet nuget add source C:\Projects\play\packages -n PlayEconomy
 
+Add or Update Package Version: dotnet pack -p:PackageVersion=1.0.1 -o ../../../packages
+
 Docker Compose UP: docker-compose up --d
 
 Docker Compose Down: docker-compose down

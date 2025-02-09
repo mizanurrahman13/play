@@ -1,4 +1,4 @@
-﻿namespace PLAY.Catalog.Service.Settings;
+﻿namespace PLAY.Common.Settings;
 
 public class RabbitMQSettings
 {

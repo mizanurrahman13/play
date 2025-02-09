@@ -1,3 +1,4 @@
+using PLAY.Common.MassTransit;
 using PLAY.Common.MongoDb;
 using PLAY.Inventory.Service.Clients;
 using PLAY.Inventory.Service.Entities;
@@ -7,7 +8,9 @@ using Polly.Timeout;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMongo()
-    .AddMongoRepository<InventoryItem>("inventoryItems");
+    .AddMongoRepository<InventoryItem>("inventoryItems")
+    .AddMongoRepository<CatalogItem>("catalogitems")
+    .AddMassTransitWithRabbitMq(builder.Configuration);
 
 var jitterer = new Random();
 

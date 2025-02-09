@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PLAY.Catalog.Contracts\PLAY.Catalog.Contracts.csproj" />
     <ProjectReference Include="..\PLAY.Common\PLAY.Common.csproj" />
   </ItemGroup>
 
