@@ -47,7 +47,6 @@ A microservice architecture utilizing RabbitMQ and MassTransit allows for effici
 - **MongoDb**: MongoDB offers high scalability, flexibility, and performance for handling large volumes of data, making it ideal for modern, dynamic applications.
 - **Polly**: Polly enhances the resilience and reliability of applications by providing sophisticated error-handling and resilience policies such as retries, circuit breakers, and timeouts.
 - **Docker**: Docker provides a lightweight and consistent environment for application development and deployment, enabling portability, scalability, and efficient resource utilization across different platforms.
-- **EF Core**: Popular .NET ORM.
 
 ## Technologies Used
 
@@ -58,7 +57,6 @@ A microservice architecture utilizing RabbitMQ and MassTransit allows for effici
 - **Polly**
 - **Docker**
 - **MongoDb**
-- **EF Core**
 
 ## Contributing
 
