@@ -1,0 +1,28 @@
+/* Add this to your CSS file */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+}
+
+/* NavMenu.css */
+.sticky-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Footer.css */
+.sticky-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+}
+
