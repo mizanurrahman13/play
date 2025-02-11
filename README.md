@@ -45,7 +45,8 @@ A microservice architecture utilizing RabbitMQ and MassTransit allows for effici
 - **MassTransit**: MassTransit simplifies the development and management of messaging patterns in .NET applications, enhancing scalability, reliability, and maintainability through seamless integration with message brokers like RabbitMQ.
 - **Polly**: Polly enhances the resilience and reliability of applications by providing sophisticated error-handling and resilience policies such as retries, circuit breakers, and timeouts.
 - **Docker**: Docker provides a lightweight and consistent environment for application development and deployment, enabling portability, scalability, and efficient resource utilization across different platforms.
-- **Repository** : Provides abstraction and simplifies data access logic.
+- **Repository**: Provides abstraction and simplifies data access logic.
+- **CORS**: CORS (Cross-Origin Resource Sharing) enhances web security by allowing browsers to make requests to different origins only when explicitly permitted, preventing unauthorized data access.
 - **MongoDb**: MongoDB offers high scalability, flexibility, and performance for handling large volumes of data, making it ideal for modern, dynamic applications.
 
 ## Technologies Used
@@ -56,6 +57,7 @@ A microservice architecture utilizing RabbitMQ and MassTransit allows for effici
 - **Polly**
 - **Docker**
 - **Repository Pattern**
+- **CORS**
 - **MongoDb**
 
 ## Contributing
